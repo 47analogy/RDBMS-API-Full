@@ -7,6 +7,8 @@ const knex = require("knex");
 const dbConfig = require("./knexfile");
 const db = knex(dbConfig.development);
 
+server.use(bodyParser.json());
+
 server.get("/", (req, res) => {
 	res.status(200).json({ api: "running" });
 });
